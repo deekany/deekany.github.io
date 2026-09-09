@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薯条漫画-薯条漫画热门作品与阅读指南</title>
+    <meta name="description" content="薯条漫画是深受读者喜爱的漫画平台，这里整理热门作品、分类推荐、阅读方法与常见问题，助你快速找到心仪的漫画，享受流畅阅读体验。">
+    <meta name="keywords" content="薯条漫画,漫画阅读,热门漫画,漫画推荐,漫画平台,免费漫画,漫画分类,阅读指南">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #faf7f2;
+            color: #1e1c1a;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 头部与导航 */
+        .site-header {
+            background: #fff9f0;
+            border-bottom: 1px solid #e6d9c8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 12px 0;
+        }
+        .brand h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #b05c2e;
+            letter-spacing: 0.5px;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .brand p {
+            font-size: 0.85rem;
+            color: #6b4f3a;
+            margin-top: 4px;
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #4d3a2b;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .main-nav a:hover {
+            color: #b05c2e;
+            border-bottom-color: #b05c2e;
+        }
+        /* 首屏区 */
+        .hero {
+            background: linear-gradient(145deg, #f9e5d3 0%, #fff3e9 100%);
+            border-radius: 32px;
+            margin: 28px 0 36px;
+            padding: 42px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 8px 20px rgba(158, 96, 42, 0.08);
+        }
+        .hero-text {
+            flex: 1 1 300px;
+        }
+        .hero-text h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #3f2c1a;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #584735;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .hero-badge {
+            background: #b05c2e;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 0.95rem;
+            border: none;
+        }
+        .hero-emoji {
+            font-size: 4rem;
+            padding-right: 20px;
+        }
+        /* 核心内容区 */
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 650;
+            color: #2b211a;
+            margin: 40px 0 24px;
+            position: relative;
+            padding-left: 18px;
+        }
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 28px;
+            background: #e08c52;
+            border-radius: 8px;
+        }
+        .hot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .comic-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px 16px 16px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.03);
+            transition: all 0.25s ease;
+            border: 1px solid #f0e2d2;
+        }
+        .comic-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 28px rgba(190, 100, 40, 0.08);
+            border-color: #dbaa7b;
+        }
+        .comic-card h3 {
+            color: #a34e1f;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: 650;
+        }
+        .comic-card p {
+            color: #5e4d3b;
+            font-size: 0.92rem;
+            margin-bottom: 10px;
+        }
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .tag {
+            background: #f6e5d6;
+            color: #8a4f26;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        .btn-like {
+            background: #b05c2e;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            cursor: default;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        /* 分类卡片区 */
+        .category-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 24px 0 20px;
+        }
+        .cat-item {
+            background: #fff5eb;
+            border-radius: 40px;
+            padding: 10px 20px;
+            font-weight: 500;
+            color: #6b3f1e;
+            transition: 0.15s;
+            border: 1px solid #eedac6;
+        }
+        .cat-item:hover {
+            background: #f0dac2;
+            cursor: default;
+        }
+        /* 步骤区 */
+        .steps-box {
+            background: #fffcf8;
+            border-radius: 28px;
+            padding: 28px 24px;
+            border: 1px solid #ebd9c8;
+            margin: 30px 0;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .step-item {
+            background: #fef3ea;
+            border-radius: 20px;
+            padding: 18px 14px;
+            text-align: left;
+        }
+        .step-num {
+            display: inline-block;
+            background: #b05c2e;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        /* 优势列表 */
+        .advantage-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            background: #faeadd;
+            border-radius: 28px;
+            padding: 28px;
+            margin: 30px 0;
+        }
+        .advantage-item {
+            background: rgba(255, 255, 255, 0.55);
+            border-radius: 20px;
+            padding: 20px 16px;
+            backdrop-filter: blur(2px);
+        }
+        .advantage-item h3 {
+            color: #6e3d1a;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        /* 常见问题 */
+        .faq-list {
+            margin: 20px 0 30px;
+        }
+        .faq-item {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 20px;
+            padding: 18px 22px;
+            border-left: 5px solid #e08c52;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            color: #4c2f1b;
+            margin-bottom: 6px;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #2f241b;
+            color: #dccbbd;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 40px 40px 0 0;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links a {
+            color: #dbbd9f;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .main-nav ul {
+                gap: 1rem;
+            }
+            .hero {
+                flex-direction: column;
+                padding: 28px 16px;
+                text-align: center;
+            }
+            .hero-emoji {
+                padding-right: 0;
+                margin-bottom: 10px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+            .brand h1 {
+                font-size: 1.5rem;
+            }
+            .hero-text h2 {
+                font-size: 1.7rem;
+            }
+            .hot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <h1>薯条漫画</h1>
+                <p>新鲜 · 有趣 · 随时看</p>
+            </div>
+            <nav class="main-nav" aria-label="主导航">
+                <ul>
+                    <li><a href="#hot">热门作品</a></li>
+                    <li><a href="#category">分类</a></li>
+                    <li><a href="#guide">阅读指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 首屏介绍 -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>薯条漫画 · 快乐阅读基地</h2>
+                <p>发现高品质漫画，从治愈日常到热血冒险，分类清晰、更新迅速。不管你是老漫迷还是新朋友，都能在薯条漫画找到属于自己的那一格。</p>
+                <span class="hero-badge">✨ 今日推荐 · 热门连载</span>
+            </div>
+            <div class="hero-emoji">🍟📚</div>
+        </section>
+
+        <!-- 热门作品区 -->
+        <section id="hot" aria-label="热门漫画">
+            <h2 class="section-title">🔥 热门作品精选</h2>
+            <div class="hot-grid">
+                <article class="comic-card">
+                    <h3>薯条侦探社</h3>
+                    <p>小镇谜案频发，天才少年与毒舌薯条搭档，用智慧解开层层真相，轻松又烧脑。</p>
+                    <div class="tag-group"><span class="tag">推理</span><span class="tag">搞笑</span></div>
+                    <span class="btn-like">热度 9.2</span>
+                </article>
+                <article class="comic-card">
+                    <h3>干酪星球冒险</h3>
+                    <p>穿越到奶酪构成的异世界，结识会说话的薯条战士，一场美味又惊险的旅程。</p>
+                    <div class="tag-group"><span class="tag">冒险</span><span class="tag">奇幻</span></div>
+                    <span class="btn-like">热度 8.8</span>
+                </article>
+                <article class="comic-card">
+                    <h3>盐味青春</h3>
+                    <p>校园社团的日常，咸咸淡淡却温暖动人。那些放学后的薯条时光，承载着友情与成长。</p>
+                    <div class="tag-group"><span class="tag">校园</span><span class="tag">治愈</span></div>
+                    <span class="btn-like">热度 9.0</span>
+                </article>
+                <article class="comic-card">
+                    <h3>深夜食堂·薯条篇</h3>
+                    <p>午夜十二点，奇妙的薯条小铺开张。每一位客人都有一份与食物有关的故事。</p>
+                    <div class="tag-group"><span class="tag">美食</span><span class="tag">人生</span></div>
+                    <span class="btn-like">热度 8.6</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- 分类与推荐 -->
+        <section id="category" aria-label="分类浏览">
+            <h2 class="section-title">📂 按口味挑选</h2>
+            <div class="category-flex">
+                <span class="cat-item">热血战斗</span>
+                <span class="cat-item">恋爱甜宠</span>
+                <span class="cat-item">悬疑烧脑</span>
+                <span class="cat-item">搞笑日常</span>
+                <span class="cat-item">科幻星际</span>
+                <span class="cat-item">古风武侠</span>
+                <span class="cat-item">治愈萌系</span>
+                <span class="cat-item">恐怖惊悚</span>
+            </div>
+            <p style="margin-top: 10px;color: #66513e;">每类均有大量精选作品，持续上新。点击分类即可发现你的下一本心头好。</p>
+        </section>
+
+        <!-- 阅读指南步骤 -->
+        <section class="steps-box" id="guide">
+            <h2 style="font-size: 1.8rem; color: #3a2b1c;">🍟 薯条漫画阅读指南</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <span class="step-num">1</span>
+                    <h3>搜索/浏览</h3>
+                    <p>通过顶部分类或搜索框找到感兴趣的漫画。</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">2</span>
+                    <h3>详情页</h3>
+                    <p>查看漫画简介、评分、目录与阅读进度。</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">3</span>
+                    <h3>开始阅读</h3>
+                    <p>支持上下滑动/翻页，记忆上次阅读位置。</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">4</span>
+                    <h3>收藏与订阅</h3>
+                    <p>加入书架，更新第一时间提醒。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 优势/特点 -->
+        <section>
+            <h2 class="section-title">⭐ 为什么选择薯条漫画</h2>
+            <div class="advantage-list">
+                <div class="advantage-item">
+                    <h3>更新快</h3>
+                    <p>热门作品与汉化组同步，第一时间上架新章节。</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>画质清晰</h3>
+                    <p>高清原图，支持多种阅读模式，护眼背景。</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>全端同步</h3>
+                    <p>手机、平板、电脑无缝衔接阅读进度。</p>
+                </div>
+                <div class="advantage-item">
+                    <h3>社区氛围</h3>
+                    <p>每话评论区，与同好一起吐槽讨论剧情。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq">
+            <h2 class="section-title">❓ 常见问题</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>薯条漫画需要付费吗？</h3>
+                    <p>大部分漫画都可以免费阅读，部分最新话或独家作品可能会以积分或会员形式提前观看，但日常更新基本免费。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>是否支持下载离线阅读？</h3>
+                    <p>是的，在移动端可缓存已打开章节，无网络时也能继续阅读，但请尊重版权，下载内容仅供个人使用。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何获取漫币或积分？</h3>
+                    <p>每日签到、阅读时长奖励、参与社区活动都可以获得积分，用于购买特典或解锁部分番外。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>漫画版权正规吗？</h3>
+                    <p>薯条漫画与多家工作室及正版平台合作，坚持推广正版内容，支持创作者。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>阅读记录会丢失吗？</h3>
+                    <p>登录账号后阅读记录自动云同步，更换设备也不怕。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关主题推荐 -->
+        <section>
+            <h2 class="section-title">🧩 相关主题推荐</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; background: #fbf1e6; border-radius: 30px; padding: 20px;">
+                <span class="cat-item">搞笑日常</span>
+                <span class="cat-item">轻小说改编</span>
+                <span class="cat-item">热血战斗</span>
+                <span class="cat-item">异世界</span>
+                <span class="cat-item">少女漫</span>
+                <span class="cat-item">少年漫</span>
+                <span class="cat-item">完结佳作</span>
+                <span class="cat-item">漫画排行</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div style="font-weight: 300;">🍟 薯条漫画 · 畅快阅读每一天</div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">联系合作</a>
+                <a href="#">版权声明</a>
+                <a href="#">帮助中心</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
