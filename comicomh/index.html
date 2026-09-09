@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comico漫画-comico漫画大全与阅读指南</title>
+    <meta name="description" content="comico漫画是韩国NHN Entertainment推出的全球漫画平台，汇集韩国、日本、台湾、泰国等地优质原创漫画作品。本站提供comico漫画阅读指南、热门作品推荐、APP下载使用教程及常见问题解答，帮助漫画爱好者快速上手并发现精彩内容。">
+    <meta name="keywords" content="comico漫画,comico漫画大全,comico漫画阅读,comico漫画APP,comico漫画推荐,韩国漫画,条漫,webtoon">
+    <style>
+        /* ===== 全局重置与基础 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: #f7f8fc;
+            color: #222;
+            line-height: 1.65;
+            font-size: 16px;
+        }
+        a {
+            color: #5b4cff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #3b2bd4;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        ul, ol {
+            padding-left: 1.4rem;
+        }
+        .container {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.3px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-subtitle {
+            color: #5a5f73;
+            font-size: 1rem;
+            margin-bottom: 2.2rem;
+            border-left: 4px solid #5b4cff;
+            padding-left: 14px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-5 { margin-top: 3rem; }
+        .mb-3 { margin-bottom: 1.2rem; }
+
+        /* ===== 页眉 ===== */
+        .header {
+            background: linear-gradient(135deg, #1e1e3a 0%, #2a2a5a 100%);
+            color: #fff;
+            padding: 1.1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(145deg, #ff7a59, #ff4d6d);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(255,77,109,0.3);
+        }
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .brand-name span {
+            color: #ffd166;
+        }
+        .nav {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+        }
+        .nav a {
+            color: #e0e0f0;
+            font-size: 0.95rem;
+            padding: 6px 2px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav a:hover {
+            color: #ffffff;
+            border-bottom-color: #ffd166;
+        }
+
+        /* ===== 首屏 Hero ===== */
+        .hero {
+            background: linear-gradient(160deg, #f0f0ff 0%, #e8e6ff 50%, #dcd8ff 100%);
+            padding: 3.5rem 0 3rem;
+            border-bottom: 1px solid #e2e0f0;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 55%;
+            min-width: 280px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #5b4cff;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 4px 16px;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            line-height: 1.2;
+            font-weight: 900;
+            color: #151532;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 .accent {
+            color: #5b4cff;
+            position: relative;
+        }
+        .hero p {
+            font-size: 1.08rem;
+            color: #3a3f55;
+            max-width: 580px;
+            margin-bottom: 1.8rem;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.98rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: none;
+        }
+        .btn-primary {
+            background: #5b4cff;
+            color: #fff !important;
+            box-shadow: 0 4px 14px rgba(91,76,255,0.35);
+        }
+        .btn-primary:hover {
+            background: #4636e8;
+            box-shadow: 0 6px 18px rgba(91,76,255,0.45);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #5b4cff;
+            border: 2px solid #5b4cff;
+        }
+        .btn-outline:hover {
+            background: rgba(91,76,255,0.08);
+            transform: translateY(-2px);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2.2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-num {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #1a1a2e;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: #5a5f73;
+            margin-top: 2px;
+        }
+        .hero-illustration {
+            flex: 1 1 35%;
+            min-width: 240px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.6);
+            text-align: center;
+        }
+        .hero-illustration .phone-mock {
+            background: #fff;
+            border-radius: 22px;
+            padding: 1.2rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            max-width: 260px;
+            margin: 0 auto;
+        }
+        .phone-mock .mock-header {
+            background: #5b4cff;
+            border-radius: 12px 12px 0 0;
+            padding: 10px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .mock-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            padding: 12px 8px;
+            background: #f4f4ff;
+            border-radius: 0 0 12px 12px;
+        }
+        .mock-cell {
+            background: #e0dcff;
+            border-radius: 6px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .mock-cell:nth-child(2n) {
+            background: #d3ceff;
+        }
+
+        /* ===== 内容区通用 ===== */
+        .section {
+            padding: 3.5rem 0;
+        }
+        .section-light {
+            background: #ffffff;
+        }
+        .section-gray {
+            background: #f7f8fc;
+        }
+
+        /* ===== 分类卡片 ===== */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 1.8rem 1.4rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            transition: transform 0.25s, box-shadow 0.25s;
+            border: 1px solid #f0f0f5;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+        }
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .feature-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+            font-weight: 700;
+        }
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #4f5565;
+        }
+
+        /* ===== 热门作品卡片 ===== */
+        .comic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .comic-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            transition: transform 0.25s, box-shadow 0.25s;
+            border: 1px solid #efeff5;
+        }
+        .comic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .comic-cover {
+            height: 200px;
+            background: linear-gradient(135deg, #b8b3ff, #8f87ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.9);
+            position: relative;
+        }
+        .comic-cover.cover-2 { background: linear-gradient(135deg, #ffb86c, #ff6b6b); }
+        .comic-cover.cover-3 { background: linear-gradient(135deg, #6bc5ff, #5b4cff); }
+        .comic-cover.cover-4 { background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: #333; }
+        .comic-cover.cover-5 { background: linear-gradient(135deg, #84fab0, #8fd3f4); color: #333; }
+        .comic-cover.cover-6 { background: linear-gradient(135deg, #fccb90, #d57eeb); }
+        .comic-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.55);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(2px);
+        }
+        .comic-info {
+            padding: 0.9rem 1rem 1rem;
+        }
+        .comic-info h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+        .comic-info .genre {
+            font-size: 0.8rem;
+            color: #5b4cff;
+            font-weight: 500;
+        }
+        .comic-info .desc {
+            font-size: 0.85rem;
+            color: #5a5f73;
+            margin-top: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ===== 步骤 ===== */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .step-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #f9f9ff;
+            border-radius: 18px;
+            border: 1px solid #e8e6ff;
+            transition: background 0.3s;
+        }
+        .step-item:hover {
+            background: #efedff;
+        }
+        .step-num {
+            width: 44px;
+            height: 44px;
+            background: #5b4cff;
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 4px 10px rgba(91,76,255,0.3);
+        }
+        .step-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        .step-item p {
+            font-size: 0.9rem;
+            color: #4f5565;
+        }
+
+        /* ===== 优势列表 ===== */
+        .advantage-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+        .advantage-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: #fff;
+            padding: 1.2rem 1.4rem;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            border-left: 5px solid #5b4cff;
+        }
+        .advantage-item .icon {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+        .advantage-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 3px;
+            color: #1a1a2e;
+        }
+        .advantage-item p {
+            font-size: 0.92rem;
+            color: #4f5565;
+        }
+
+        /* ===== 注意事项 ===== */
+        .notice-box {
+            background: #fff9e6;
+            border: 1px solid #ffe5a0;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin-top: 1.8rem;
+        }
+        .notice-box h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            color: #7a5b00;
+        }
+        .notice-box ul {
+            margin-bottom: 0.5rem;
+        }
+        .notice-box li {
+            margin-bottom: 0.4rem;
+            color: #4a3f00;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list {
+            max-width: 800px;
+            margin: 1.5rem auto 0;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-bottom: 0.8rem;
+            border: 1px solid #eeeef5;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1.1rem 1.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1a1a2e;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fafaff;
+            transition: background 0.2s;
+        }
+        .faq-question:hover {
+            background: #f0efff;
+        }
+        .faq-question .arrow {
+            transition: transform 0.3s;
+            font-size: 0.9rem;
+            color: #5b4cff;
+        }
+        .faq-item.active .arrow {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 1.5rem 1.2rem;
+            font-size: 0.94rem;
+            color: #3f4557;
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* ===== 相关主题 ===== */
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+        .tag {
+            background: #efedff;
+            color: #4a3dcc;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid #dfdbff;
+        }
+        .tag:hover {
+            background: #5b4cff;
+            color: #fff;
+            border-color: #5b4cff;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            background: #1a1a2e;
+            color: #b0b3c8;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #b0b3c8;
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2f2f4a;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #7a7d94;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0.5rem 0;
+            }
+            .nav {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-content {
+                flex-direction: column;
+            }
+            .hero-illustration {
+                width: 100%;
+            }
+            .section {
+                padding: 2.5rem 0;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .comic-cover {
+                height: 160px;
+            }
+            .btn {
+                padding: 10px 22px;
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .feature-grid, .comic-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .comic-cover {
+                height: 130px;
+                font-size: 2.2rem;
+            }
+            .hero-stats {
+                gap: 1.2rem;
+            }
+            .stat-num {
+                font-size: 1.4rem;
+            }
+            .notice-box {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- ===== 页眉 ===== -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="brand">
+                <div class="brand-icon">C</div>
+                <div class="brand-name">comico<span>漫画</span></div>
+            </div>
+            <nav class="nav">
+                <a href="#home">首页</a>
+                <a href="#features">平台特色</a>
+                <a href="#popular">热门作品</a>
+                <a href="#guide">使用指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== 首屏 ===== -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">📖 全球漫画平台 · 每日更新</span>
+                <h1>comico漫画，<br>发现<span class="accent">无限精彩</span>的条漫世界</h1>
+                <p>comico漫画是源自韩国的知名漫画平台，拥有海量韩国、日本及华人原创漫画。采用纵向滚动阅读模式，适配手机，让您随时随地畅享漫画乐趣。无论是恋爱、奇幻、悬疑还是热血冒险，总有一部作品能打动你。</p>
+                <div class="hero-actions">
+                    <a href="#popular" class="btn btn-primary">浏览热门作品</a>
+                    <a href="#guide" class="btn btn-outline">查看使用指南</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-num">2000+</div>
+                        <div class="stat-label">部连载作品</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">10+</div>
+                        <div class="stat-label">种语言版本</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">免费</div>
+                        <div class="stat-label">大部分可读</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <div class="phone-mock">
+                    <div class="mock-header">comico 漫画</div>
+                    <div class="mock-grid">
+                        <div class="mock-cell">📘</div>
+                        <div class="mock-cell">📗</div>
+                        <div class="mock-cell">📙</div>
+                        <div class="mock-cell">📕</div>
+                        <div class="mock-cell">📔</div>
+                        <div class="mock-cell">📓</div>
+                        <div class="mock-cell">📒</div>
+                        <div class="mock-cell">📚</div>
+                        <div class="mock-cell">🎨</div>
+                    </div>
+                </div>
+                <p style="margin-top: 1.2rem; font-size: 0.9rem; color: #4a3f88;">纵向滚动 · 全屏阅读 · 体验更佳</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 平台特色 ===== -->
+    <section class="section section-light" id="features">
+        <div class="container">
+            <h2 class="section-title">comico漫画平台特色</h2>
+            <p class="section-subtitle">为什么全球千万读者选择 comico？</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>原创精品</h3>
+                    <p>汇聚韩国、日本、台湾、泰国等地创作者，独家连载大量原创条漫，题材新颖，画风多样。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>滚动阅读</h3>
+                    <p>专为移动端优化的纵向滚动模式，免去翻页烦恼，沉浸式阅读体验流畅自然。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>多语言支持</h3>
+                    <p>提供简体中文、繁体中文、韩语、日语、英语等多语言界面，满足全球读者需求。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>每日更新</h3>
+                    <p>热门作品保持高频更新，部分作品每周固定连载，追更体验顺畅，不让你久等。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>读者互动</h3>
+                    <p>每话下方设有评论区，可点赞、留言，与作者和同好交流心得，感受社区氛围。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>更新提醒</h3>
+                    <p>关注作品后自动推送更新通知，不错过任何一话的发布，贴心又省心。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 热门作品推荐 ===== -->
+    <section class="section section-gray" id="popular">
+        <div class="container">
+            <h2 class="section-title">comico漫画热门作品推荐</h2>
+            <p class="section-subtitle">从新人入门到资深漫迷都爱看的精选作品</p>
+            <div class="comic-grid">
+                <article class="comic-card">
+                    <div class="comic-cover cover-1">🌿<span class="comic-badge">恋爱</span></div>
+                    <div class="comic-info">
+                        <h3>恋爱的日常</h3>
+                        <span class="genre">恋爱 · 校园</span>
+                        <p class="desc">描绘高中生之间青涩又温暖的恋爱故事，画风细腻，情节治愈。</p>
+                    </div>
+                </article>
+                <article class="comic-card">
+                    <div class="comic-cover cover-2">⚔️<span class="comic-badge">奇幻</span></div>
+                    <div class="comic-info">
+                        <h3>骑士物语</h3>
+                        <span class="genre">奇幻 · 冒险</span>
+                        <p class="desc">落魄骑士与神秘少女的冒险之旅，充满魔法与阴谋的宏大世界。</p>
+                    </div>
+                </article>
+                <article class="comic-card">
+                    <div class="comic-cover cover-3">🕵️<span class="comic-badge">悬疑</span></div>
+                    <div class="comic-info">
+                        <h3>迷雾调查组</h3>
+                        <span class="genre">悬疑 · 推理</span>
+                        <p class="desc">一桩离奇案件引出城市背后的秘密，层层反转让人欲罢不能。</p>
+                    </div>
+                </article>
+                <article class="comic-card">
+                    <div class="comic-cover cover-4">🍰<span class="comic-badge">美食</span></div>
+                    <div class="comic-info">
+                        <h3>甜点师的秘密</h3>
+                        <span class="genre">美食 · 治愈</span>
+                        <p class="desc">天才甜点师在街角小店追寻梦想，每一道甜品背后都有一个故事。</p>
+                    </div>
+                </article>
+                <article class="comic-card">
+                    <div class="comic-cover cover-5">🤝<span class="comic-badge">友情</span></div>
+                    <div class="comic-info">
+                        <h3>篮球伙伴</h3>
+                        <span class="genre">运动 · 热血</span>
+                        <p class="desc">高中篮球队的成长故事，友谊与汗水交织的青春诗篇。</p>
+                    </div>
+                </article>
+                <article class="comic-card">
+                    <div class="comic-cover cover-6">👻<span class="comic-badge">搞笑</span></div>
+                    <div class="comic-info">
+                        <h3>幽灵室友</h3>
+                        <span class="genre">搞笑 · 日常</span>
+                        <p class="desc">大学生与幽灵同住一个屋檐下的爆笑日常，轻松解压必备。</p>
+                    </div>
+                </article>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #5a5f73; font-size: 0.95rem;">以上仅为部分代表作品，更多精彩内容请前往 comico漫画 APP 或官网探索。</p>
+        </div>
+    </section>
+
+    <!-- ===== 使用指南 ===== -->
+    <section class="section section-light" id="guide">
+        <div class="container">
+            <h2 class="section-title">comico漫画使用指南</h2>
+            <p class="section-subtitle">从下载到阅读，只需四步轻松上手</p>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <h3>获取应用</h3>
+                    <p>在 App Store 或 Google Play 搜索“comico漫画”，下载官方应用。也可访问官网使用网页版。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <h3>创建账号</h3>
+                    <p>使用邮箱或手机号注册，支持第三方快捷登录。注册后即可收藏作品、同步阅读进度。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <h3>发现作品</h3>
+                    <p>通过分类浏览、排行榜或搜索功能找到感兴趣的漫画。每日推荐专区也有惊喜。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <h3>开始阅读</h3>
+                    <p>点击作品进入详情页，点击“阅读”即可开始纵向滚动阅读。可调节亮度、字号，夜间模式更护眼。</p>
+                </div>
+            </div>
+
+            <div class="advantage-list mt-5">
+                <div class="advantage-item">
+                    <div class="icon">✅</div>
+                    <div>
+                        <h3>免费与付费内容清晰标注</h3>
+                        <p>多数作品的前几话免费，后续章节可能通过等待时间解锁或使用平台货币购买。每部作品均明确标注付费规则。</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="icon">📴</div>
+                    <div>
+                        <h3>支持离线下载</h3>
+                        <p>付费或已解锁的章节可下载至本地，无网络环境下也能随时阅读，通勤路上更从容。</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="icon">🎯</div>
+                    <div>
+                        <h3>个性化推荐</h3>
+                        <p>系统会根据你的阅读历史，在“为你推荐”板块精准推送类似风格的作品，越读越懂你。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notice-box">
+                <h3>⚠️ 使用注意事项</h3>
+                <ul>
+                    <li>请通过官方渠道下载应用，避免安装不明来源的版本，以保证账号安全。</li>
+                    <li>部分作品有地区版权限制，若无法访问可尝试切换网络环境或联系客服确认。</li>
+                    <li>阅读时请适度休息，注意保护视力，避免长时间连续使用手机。</li>
+                    <li>如遇加载缓慢，可尝试切换 WiFi / 移动网络，或清理应用缓存。</li>
+                    <li>充值消费前请确认价格和支付方式，保留好相关凭证。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 常见问题 FAQ ===== -->
+    <section class="section section-gray" id="faq">
+        <div class="container">
+            <h2 class="section-title text-center" style="display: block; text-align: center;">comico漫画常见问题</h2>
+            <p class="section-subtitle" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">关于使用、阅读与账号的疑问，这里都有答案</p>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        comico漫画是免费的吗？
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        大部分作品的前几话免费供读者试读。后续章节部分可通过每日等待解锁免费阅读，部分需要消耗平台货币（如“C币”）或通过活动获取。具体收费规则在每部作品的详情页都有清晰标注，请以实际页面为准。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        如何变更阅读语言或地区？
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        在应用“设置”中可切换界面语言。由于版权原因，不同地区的作品库可能有所差异，通常账号注册地区决定可访问内容。如需变更地区，可尝试联系官方客服咨询，不建议使用非正规手段修改定位。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        comico漫画和 webtoon 有什么区别？
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        comico漫画与 webtoon 都是条漫平台，但属于不同公司运营（comico 由 NHN Entertainment 推出，webtoon 由 NAVER 推出）。两者在独家作品、界面设计、运营活动上均有差异。comico 在部分亚洲国家拥有独特的本土作品资源，建议两边都体验，根据自己的喜好选择。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        下载的漫画可以永久保存吗？
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        离线下载的章节通常有有效期限（如30天），过期后需重新连接网络刷新。此外，如果作品因版权下架，已下载内容也可能失效。建议及时阅读，不要过度依赖离线缓存。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        如何举报不良内容或反馈问题？
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        每个作品页面或章节底部通常提供“举报”入口。也可通过应用“帮助中心”或官方网站的联系页面提交反馈，官方团队会在工作日内回复处理。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        支持在电脑上阅读吗？
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        可以。comico 提供网页版（www.comico.co 或地区域名），在浏览器中登录账号即可阅读，且阅读进度与手机端同步。不过网页版功能相比 APP 略有精简，部分操作建议使用手机完成。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 相关主题 ===== -->
+    <section class="section section-light">
+        <div class="container text-center">
+            <h2 class="section-title" style="display: block;">你可能还想了解</h2>
+            <p class="section-subtitle" style="text-align: center; border-left: none;">更多漫画相关主题推荐</p>
+            <div class="tag-list">
+                <span class="tag">韩国漫画</span>
+                <span class="tag">条漫推荐</span>
+                <span class="tag">webtoon</span>
+                <span class="tag">恋爱漫画</span>
+                <span class="tag">奇幻漫画</span>
+                <span class="tag">漫画APP排行</span>
+                <span class="tag">免费漫画</span>
+                <span class="tag">漫画阅读器</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 页脚 ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    <div class="footer-brand">comico漫画 信息站</div>
+                    <p style="max-width: 360px; font-size: 0.9rem;">本页面为 comico漫画 爱好者提供的信息整理与指南，旨在帮助新老读者更好地使用平台。所有作品版权归原平台及作者所有。</p>
+                </div>
+                <div>
+                    <div style="font-weight: 600; color: #fff; margin-bottom: 0.8rem;">快速导航</div>
+                    <div class="footer-links">
+                        <a href="#home">首页</a>
+                        <a href="#features">特色</a>
+                        <a href="#popular">热门作品</a>
+                        <a href="#guide">指南</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 comico 漫画指南 · 仅供学习交流，请支持正版漫画
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FAQ 交互 ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(function(item) {
+                var question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    // 关闭其他项
+                    faqItems.forEach(function(other) {
+                        if (other !== item) {
+                            other.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+                  </html>
